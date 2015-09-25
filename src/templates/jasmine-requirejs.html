@@ -9,7 +9,7 @@
   <% }) %>
 
   <% with (scripts) { %>
-  <% [].concat(vendor).forEach(function(script){ %>
+  <% [].concat(polyfills).forEach(function(script){ %>
   <script src="<%= script %>"></script>
   <% }) %>
   <% }; %>
@@ -18,6 +18,12 @@
 
   <% with (scripts) { %>
   <% [].concat(jasmine, boot, helpers).forEach(function(script){ %>
+  <script src="<%= script %>"></script>
+  <% }) %>
+  <% }; %>
+
+  <% with (scripts) { %>
+  <% [].concat(vendor).forEach(function(script){ %>
   <script src="<%= script %>"></script>
   <% }) %>
   <% }; %>
